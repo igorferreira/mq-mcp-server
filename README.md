@@ -17,18 +17,17 @@ This example was created based on these [instructions](https://modelcontextproto
 - The MQ MCP server uses the MQ Administrative REST API. Ensure that you have the mqweb server running as part of a full MQ for distributed installation with one or more queue managers. This doesn't have to be on your local machine
 - Ensure that you have installed Python 3.10 or higher
 - Install uv and set up your Python project
-    - (MacOS/Linux): curl -LsSf https://astral.sh/uv/install.sh | sh
-    - (Windows): powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+    - (MacOS/Linux): **curl -LsSf https://astral.sh/uv/install.sh | sh**
+    - (Windows): **powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"**
 - Restart your terminal
-- Clone this repo into a working directory, e.g. C:\work
-- In the working directory run: uv init mq-mcp-server
-- Change into the mq-mcp-server directory: cd mq-mcp-server
-- Install dependencies: uv add "mcp[cli]" httpx
-- Open mqmcpserver.py in your editor of choice and change:
+- Clone this repo into a working directory, e.g. **C:\work**
+- Change into the mq-mcp-server directory: **cd mq-mcp-server**
+- Install dependencies: **uv add "mcp[cli]" httpx**
+- Open **mqmcpserver.py** in your editor of choice and change:
     - URL_BASE to point to the base URL of your mqweb server
     - USER_NAME and PASSWORD to the username and password of the user you want to run MQSC commands as. Bear in mind that if the user is a member of the MQWebAdmin or MQWebUser roles then requests to the MQ MCP server will be able to change your MQ configuration, so you might only want to use these roles in a test environment
 - Save your changes
-- Start the MQ MCP server by running: uv run mqmcpserver.py
+- Start the MQ MCP server by running: **uv run mqmcpserver.py**
 
 By default the MQ MCP server will be listening on 127.0.0.1:8000 using the streamable HTTP protocol. You can adjust the host name and port number, or use a different protocol using the information provided [here](https://github.com/jlowin/fastmcp#running-your-server).
 
