@@ -30,6 +30,10 @@ This example was created based on these [instructions](https://modelcontextproto
 - Save your changes
 - Start the MQ MCP server by running: uv run mqmcpserver.py
 
+By default the MQ MCP server will be listening on 127.0.0.1:8000 using the streamable HTTP protocol. You can adjust the host name and port number, or use a different protocol using the information provided [here](https://github.com/jlowin/fastmcp#running-your-server).
+
+https://github.com/jlowin/fastmcp#running-your-server
+
 ## Connecting the MCP server to an LLM
 
 Follow the instructions provided by your LLM for connecting to your new MCP server. For example you could connect to it using [IBM Watsonx Orchestrate](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base?topic=tools-importing-from-mcp-server). 
