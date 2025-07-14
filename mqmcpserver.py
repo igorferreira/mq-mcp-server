@@ -22,15 +22,15 @@ from mcp.server.fastmcp import FastMCP
 # Initialize FastMCP server
 mcp = FastMCP("mqmcpserver")
 
-# Adjust this to point to your mqweb server
+# Change this to point to your mqweb server
 URL_BASE = "https://localhost:9443/ibmmq/rest/v3/admin/"
+
+# Change these to a suitable user in your mqweb server
 USER_NAME = "mqreader"
 PASSWORD = "mqreader"
 
-
 @mcp.tool()
 async def dspmq() -> str:
-#def dspmq() -> str:
     """List available queue managers and whether they are running or not
     """
     headers = {
@@ -87,7 +87,7 @@ async def runmqsc(qmgr_name: str, mqsc_command: str) -> str:
             return "Something went wrong!"
             
 # Put the output of each MQSC command on its own line, separated by ---
-# For the moment this will not work against z/OS queue managers which use a different format.
+# For the moment this will not work against z/OS queue managers which use a slightly different format.
 def prettify_runmqsc(payload: str) -> str:
     jsonOutput = json.loads(payload.decode("utf-8"))
     prettifiedOutput="\n---\n"
