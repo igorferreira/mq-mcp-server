@@ -1,6 +1,6 @@
-# Sample MQ MCP server
+# Sample IBM MQ MCP server
 
-MCP (Model Context Protocol) is an open standard that allows LLMs and AI agents to interact with external services such as databases, REST APIs, files, and other resources.
+MCP (Model Context Protocol) is an open standard that allows LLMs and AI agents to discover and interact with external services such as databases, REST APIs, files, and other resources.
 You can read up on the details of MCP [here](https://modelcontextprotocol.io/introduction).
 
 This repo contains a simple MCP server, written in Python, that exposes a subset of the [MQ Administrative REST API](https://www.ibm.com/docs/en/ibm-mq/9.4.x?topic=administering-administration-using-rest-api) as two MCP tools:
@@ -8,13 +8,13 @@ This repo contains a simple MCP server, written in Python, that exposes a subset
 - dsqmq: lists any queue managers that are local to the mqweb server, and whether they are running or not
 - runmqsc: runs any MQSC command against a specific queue manager. This makes use of the [plain text MQSC API](https://www.ibm.com/docs/en/ibm-mq/9.4.x?topic=adminactionqmgrqmgrnamemqsc-post-plain-text-mqsc-command) 
 
-You can use this MCP server with any LLM which has an MCP client in it to allow that LLM to interact with your queue managers. 
+You can use this MCP server with any LLM which has an MCP client in it to allow that LLM to interact with, and potentially configure, your queue managers. 
 
 ## Getting the MQ MCP server running
 
 This example was created based on these [instructions](https://modelcontextprotocol.io/quickstart/server). To get the MQ MCP server running, follow these steps:
 
-- The MQ MCP server uses the MQ Administrative REST API. Ensure that you have the mqweb server running as part of a full MQ for distributed installation with one or more queue managers. This doesn't have to be on your local machine.
+- The MQ MCP server uses the MQ Administrative REST API. Ensure that you have the mqweb server running as part of a full MQ for distributed installation with one or more queue managers. This doesn't have to be on your local machine
 - Ensure that you have installed Python 3.10 or higher
 - Install uv and set up your Python project
     - (MacOS/Linux): curl -LsSf https://astral.sh/uv/install.sh | sh
