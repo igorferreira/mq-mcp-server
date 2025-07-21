@@ -29,7 +29,7 @@ This example was created based on these [instructions](https://modelcontextproto
 - Save your changes
 - Start the MQ MCP server by running: **uv run mqmcpserver.py**
 
-By default the MQ MCP server will be listening on 127.0.0.1:8000 using the streamable HTTP protocol. You can adjust the host name and port number, or use a different protocol using the information provided [here](https://github.com/jlowin/fastmcp#running-your-server).
+By default the MQ MCP server will be listening on http://127.0.0.1:8000/mcp using the streamable HTTP protocol. You can adjust the host name and port number, or use a different protocol using the information provided [here](https://github.com/jlowin/fastmcp#running-your-server).
 
 https://github.com/jlowin/fastmcp#running-your-server
 
