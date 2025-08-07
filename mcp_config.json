@@ -1,0 +1,20 @@
+{
+    "ibm-mq": {
+        "command": "uv",
+        "args": [
+            "run",
+            "--with",
+            "httpx",
+            "--with",
+            "mcp[cli]",
+            "/home/igorferreira/projetos/mcp-servers/mq-mcp-server/mqmcpserver.py"
+        ],
+        "env": {
+            "URL_BASE": "https://localhost:9443/ibmmq/rest/v2/admin",
+            "USER_NAME": "admin",
+            "PASSWORD": "admin",
+            "MCP_HOST": "127.0.0.1",
+            "MCP_PORT": "8000"
+        }
+    }
+}
