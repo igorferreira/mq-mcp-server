@@ -46,7 +46,7 @@ USER_NAME = os.getenv("USER_NAME", "admin")
 PASSWORD = os.getenv("PASSWORD", "admin")
 
 MCP_HOST = os.getenv("MCP_HOST", "127.0.0.1")
-MCP_PORT = int(os.getenv("MCP_PORT", "8000"))
+MCP_PORT = int(os.getenv("MCP_PORT", "8414"))
 
 
 @mcp.tool()
@@ -70,10 +70,10 @@ async def dspmq() -> str:
 def prettify_dspmq(payload: str) -> str:
     """
     Format the output of dspmq command for better readability.
-    
+
     Args:
         payload: Raw JSON response from IBM MQ REST API as string
-        
+
     Returns:
         Formatted string with queue manager information
     """
@@ -118,13 +118,13 @@ async def runmqsc(qmgr_name: str, mqsc_command: str) -> str:
 def prettify_runmqsc(payload: str) -> str:
     """
     Format the output of MQSC commands for better readability.
-    
-    Note: This will not work against z/OS queue managers which use 
+
+    Note: This will not work against z/OS queue managers which use
     a slightly different format.
-    
+
     Args:
         payload: Raw JSON response from IBM MQ REST API as string
-        
+
     Returns:
         Formatted string with MQSC command results
     """
